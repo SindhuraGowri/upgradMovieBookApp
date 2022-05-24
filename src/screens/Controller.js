@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Home from '../screens/home/Home.js';
+import Details from '../screens/details/Details.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class Controller extends Component {
@@ -15,6 +16,7 @@ class Controller extends Component {
       <Router>
          <div className="main-container">
           <Route exact path='/' render={(props) => <Home {...props} baseUrl = {this.baseUrl}/> }  />
+          <Route path='/movie/:id' render={(props) => <Details {...props} baseUrl = {this.baseUrl} /> } />
         </div>
       </Router>
 
